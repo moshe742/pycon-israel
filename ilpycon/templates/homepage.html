@@ -6,6 +6,25 @@
 
 {% block body_class %}home{% endblock %}
 
+{% block extra_header_class %}{% endblock %}
+
+{% block topbar_base %}
+  <header>
+    <div>
+      <div><div class="cloud"></div><div class="cloud cloud2"></div></div>
+      <div id="city"></div>
+
+      <div id="nav"><div>{{ block.super }}</div></div>
+      <div id="logo"></div>
+      <div id="surf"></div>
+      <div id="logoMobile"></div>
+      <div id="banner"></div>
+
+    </div>
+    
+  </header>
+{% endblock %}
+
 {% block body_base %}
 <main>
     <section class="jumbotron">
@@ -25,7 +44,7 @@
             {% url "account_signup" as signup_url %}
             <p class="mb-5 lead">{% blocktrans %}You can <a href="{{ login_url }}" class="btn btn-secondary">Log In</a> or <a href="{{ signup_url }}" class="btn btn-primary">Sign Up</a> to try out the site.{% endblocktrans %}</p>
             {% endif %}
-            <img src="http://pinaxproject.com/pinax-design/tessellations/Project%20Account.png" />
+            <img src="{{ STATIC_URL }}/images/city.png" />
         </div>
     </section>
     <section id="content-section">
