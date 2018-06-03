@@ -22,11 +22,11 @@
         </div>
     </section>
     <section id="content-section">
+    {% if conf_messages %}
       <div class="container">
-        {% if '-----' not in conf_messages %}
         {{ conf_messages|safe }}
-        {% endif %}
       </div>
+    {% endif %}
         <div id="content-body">
             <p class="lead">
 	      Join us for two days of learning from world-class keynotes and miryad presentations,

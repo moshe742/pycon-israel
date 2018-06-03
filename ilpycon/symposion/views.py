@@ -20,6 +20,10 @@ class HomePage(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['conf_messages'] = Page.published.get(title='messages').body_html
-        context['conf_messages_hebrew'] = Page.published.get(title='messages_hebrew').body_html
+        messages_en = Page.published.filter(title='messages')
+        if messages_en:
+            context['conf_messages'] = messages_en[0].body_html
+        messages_he = Page.published.filter(title='messages_hebrew')
+        if messages_he:
+            context['conf_messages_hebrew'] = messages_he[0].body_html
         return context
