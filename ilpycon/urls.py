@@ -2,6 +2,7 @@ from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.urls import include, path
 from django.conf.urls.static import static
+from ilpycon.symposion.views import HomePage
 from django.views.generic import TemplateView
 
 from django.contrib import admin
@@ -15,7 +16,7 @@ from .symposion.views import dashboard
 WIKI_SLUG = r"(([\w-]{2,})(/[\w-]{2,})*)"
 
 urlpatterns = i18n_patterns(
-    path("", TemplateView.as_view(template_name="homepage.html"), name="home"),
+    path("", HomePage.as_view(), name="home"),
     path("speakers/", include("ilpycon.symposion.speakers.urls")),
     path("dashboard/", dashboard, name="dashboard"),
 )

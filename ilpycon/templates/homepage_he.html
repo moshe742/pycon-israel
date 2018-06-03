@@ -23,6 +23,11 @@
         </div>
     </section>
     <section id="content-section">
+      <div class="container">
+        {% if '-----' not in conf_messages %}
+        {{ conf_messages_hebrew|safe }}
+        {% endif %}
+      </div>
         <div id="content-body">
             <p class="lead">
 	      הצטרפו אלינו ליומיים של לימוד ממרצים אורחים ברמה עולמית, והרצאות רבות ומגוונות,
